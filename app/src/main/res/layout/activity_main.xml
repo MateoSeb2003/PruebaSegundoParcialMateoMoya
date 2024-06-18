@@ -1,19 +1,117 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <GridLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:columnCount="2"
+        android:layout_margin="32sp">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/textView_nombre"
+            android:layout_width="120sp"
+            android:text="@string/textView_nombre" />
+
+        <EditText
+            android:id="@+id/editText_nombre"
+            android:layout_gravity="fill_horizontal"
+            android:hint="Ingrese sus nombres"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/textView_apellido"
+            android:text="@string/textView_apellido"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_apellido"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_apellido"
+            android:minHeight="48dp" />
+
+        <TextView
+            android:id="@+id/textView_dividendo"
+            android:text="@string/textView_dividendo"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_dividendo"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_dividendo"
+            android:minHeight="48dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textView_divisor"
+            android:text="@string/textView_divisor"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_divisor"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_divisor"
+            android:minHeight="48dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textView_invertido"
+            android:text="@string/textView_invertido"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_invertido"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_invertido"
+            android:minHeight="48dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textView_entero"
+            android:text="@string/textView_entero"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_entero"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_entero"
+            android:minHeight="48dp"
+            android:inputType="number"/>
+
+        <TextView
+            android:id="@+id/textView_residuo"
+            android:text="@string/textView_residuo"
+            android:layout_width="120sp"/>
+
+        <EditText
+            android:id="@+id/editText_residuo"
+            android:layout_gravity="fill_horizontal"
+            android:hint="@string/editText_residuo"
+            android:minHeight="48dp"
+            android:inputType="number"/>
+
+    </GridLayout>
+
+    <Button
+        android:id="@+id/button_siguiente"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="@string/button_siguiente"
+        android:textColorLink="#3F51B5" />
+
+    <Button
+        android:id="@+id/button_mostrar"
+        android:layout_width="250sp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:clickable="true"
+        android:text="@string/button_mostrar"
+        android:textColorLink="#3F51B5" />
+
+</LinearLayout>

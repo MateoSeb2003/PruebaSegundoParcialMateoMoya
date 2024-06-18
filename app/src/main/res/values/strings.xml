@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">PruebaSegundoParcialMateoMoya</string>
+
+    <string name="textView_nombre">Nombre:</string>
+    <string name="editText_nombre">Ingrese el nombre</string>
+    <string name="textView_apellido">Apellido:</string>
+    <string name="editText_apellido">Ingrese el apellido</string>
+    <string name="textView_dividendo">Dividendo:</string>
+    <string name="editText_dividendo">Ingrese un número</string>
+    <string name="textView_divisor">Divisor:</string>
+    <string name="editText_divisor">Ingrese un número</string>
+    <string name="textView_invertido">Numero invertido:</string>
+    <string name="editText_invertido">resultado</string>
+    <string name="textView_entero">Parte entera:</string>
+    <string name="editText_entero">Resultado</string>
+    <string name="textView_residuo">Residuo:</string>
+    <string name="editText_residuo">Resultado</string>
+    <string name="textView_numero">Número:</string>
+    <string name="editText_numero">Ingrese número</string>
+
+    <string name="button_siguiente">Siguiente</string>
+    <string name="button_mostrar">Mostrar resultados</string>
+    <string name="button_cerrar">Cerrar</string>
+
+
+
+
+
 </resources>
