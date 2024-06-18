@@ -39,7 +39,8 @@ public class MainActivity extends AppCompatActivity {
         siguiente.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, SegundaPantalla.class);
+                Intent intent = new Intent(
+                        MainActivity.this, SegundaPantalla.class);
 
                 String getNombre = nombre.getText().toString();
                 String getApellido = apellido.getText().toString();
@@ -68,10 +69,11 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onClick(View v) {
-                int dividendoInt = parseInt(dividendo.getText().toString());
-                int divisorInt = parseInt(divisor.getText().toString());
-                String numeroInvertido = intent.getStringExtra("keyNumeroInvertido");
-                invertido.setText(numeroInvertido);
+                int dividendoInt = Integer.parseInt(dividendo.getText().toString());
+                int divisorInt = Integer.parseInt(divisor.getText().toString());
+                String numeroInvertido = getIntent().getStringExtra("keyNumeroInvertido");
+                EditText editTextInvertido = findViewById(R.id.editText_invertido);
+                editTextInvertido.setText(numeroInvertido);
 
                 int enteroInt = 0;
                 int residuoInt = 0;
@@ -79,12 +81,13 @@ public class MainActivity extends AppCompatActivity {
                 if (divisorInt != 0) {
                     int signo = 1;
 
-                    if ((dividendoInt < 0 && divisorInt > 0) || (dividendoInt > 0 && divisorInt < 0)) {
+                    if ((dividendoInt < 0 && divisorInt > 0) ||
+                            (dividendoInt > 0 && divisorInt < 0)) {
                         signo = -1;
                     }
 
-                    dividendoInt = abs(dividendoInt);
-                    divisorInt = abs(divisorInt);
+                    dividendoInt = Math.abs(dividendoInt);
+                    divisorInt = Math.abs(divisorInt);
 
                     while (dividendoInt >= divisorInt) {
                         dividendoInt -= divisorInt;
@@ -93,7 +96,6 @@ public class MainActivity extends AppCompatActivity {
                     enteroInt *= signo;
                     residuoInt = dividendoInt;
                 }
-
                 entero.setText(String.valueOf(enteroInt));
                 residuo.setText(String.valueOf(residuoInt));
             }
@@ -101,7 +103,8 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    private void desactivarEditText() {
+
+    public void desactivarEditText(){
         nombre.setEnabled(false);
         apellido.setEnabled(false);
         dividendo.setEnabled(false);
@@ -110,31 +113,4 @@ public class MainActivity extends AppCompatActivity {
         entero.setEnabled(false);
         residuo.setEnabled(false);
     }
-
-    private int parseInt(String s) {
-        int number = 0;
-        boolean isNegative = false;
-        int i = 0;
-
-        if (s.charAt(0) == '-') {
-            isNegative = true;
-            i = 1;
-        }
-
-        for (; i < s.length(); i++) {
-            number = number * 10 + (s.charAt(i) - '0');
-        }
-
-        if (isNegative) {
-            number = -number;
-        }
-
-        return number;
-    }
-
-    private int abs(int number) {
-        return number < 0 ? -number : number;
-    }
-
-
 }
